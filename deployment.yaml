@@ -68,4 +68,5 @@ spec:
     targetPort: 25565
   selector:
     app: pixelmon
-  type: ClusterIP
+  loadBalancerIP: 10.1.40.13
+  type: LoadBalancer
