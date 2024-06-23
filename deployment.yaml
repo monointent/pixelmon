@@ -23,7 +23,7 @@ spec:
         - env:
             - name: EULA
               value: 'TRUE'
-            - name: TYPE
+            - name: MOD_PLATFORM
               value: 'AUTO_CURSEFORGE'
             - name: CF_API_KEY
               value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
@@ -44,6 +44,8 @@ spec:
           tty: true
           volumeMounts:
             - mountPath: /data
+              name: pixelmon
+            - mountPath: /downloads
               name: pixelmon
       restartPolicy: Always
       volumes:
