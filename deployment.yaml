@@ -24,7 +24,7 @@ spec:
             - name: EULA
               value: 'TRUE'
             - name: TYPE
-              value: 'FORGE'
+              value: 'AUTO_CURSEFORGE'
             - name: VERSION
               value: '1.20.2'
             - name: CF_API_KEY
