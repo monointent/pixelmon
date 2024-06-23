@@ -23,16 +23,16 @@ spec:
         - env:
             - name: EULA
               value: 'TRUE'
-            - name: TYPE
-              value: 'CURSEFORGE'
-            #- name: CF_API_KEY
-              #value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
-            #- name:  CF_SLUG
-              #value: 'the-pixelmon-modpack'
-            #- name:  CF_FILENAME_MATCHER
-              #value: '9.2.8'
-            - name: CF_SERVER_MOD
-              value: '/download/pixelmon.zip'
+            - name: MOD_PLATFORM
+              value: 'AUTO_CURSEFORGE'
+            - name: CF_API_KEY
+              value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
+            - name:  CF_SLUG
+              value: 'the-pixelmon-modpack'
+            - name:  CF_FILENAME_MATCHER
+              value: '9.2.8'
+            #- name: CF_SERVER_MOD
+              #value: '/download/pixelmon.zip'
             - name: ALLOW_FLIGHT
               value: 'TRUE'
             - name: 'MEMORY'
