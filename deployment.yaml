@@ -23,12 +23,18 @@ spec:
         - env:
             - name: EULA
               value: 'TRUE'
+            #- name: MOD_PLATFORM
+              #value: 'AUTO_CURSEFORGE'
             - name: MOD_PLATFORM
               value: 'AUTO_CURSEFORGE'
+            - name: VERSION
+              value: '1.20.2'
             - name: CF_API_KEY
               value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
-            - name:  CF_SLUG
-              value: 'the-pixelmon-modpack'
+            - naem: CURSEFORGE_FILES
+              value: 'pixelmon'
+            #- name:  CF_SLUG
+              #value: 'the-pixelmon-modpack'
             #- name:  CF_FILE_ID
               #value: '5355293'
             - name: ALLOW_FLIGHT
