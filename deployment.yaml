@@ -48,7 +48,7 @@ spec:
               memory: 8Gi
           stdin: true
           tty: true
-            volumeMounts:
+          volumeMounts:
             - mountPath: /data
               name: pixelmon
       restartPolicy: Always
