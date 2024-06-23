@@ -30,7 +30,7 @@ spec:
             - name:  CF_SLUG
               value: 'the-pixelmon-modpack'
             - name:  CF_FILENAME_MATCHER
-              value: '9.2.8'
+              value: '9.1.11'
             #- name: CF_SERVER_MOD
               #value: '/download/pixelmon.zip'
             - name: ALLOW_FLIGHT
