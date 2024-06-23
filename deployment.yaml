@@ -27,8 +27,10 @@ spec:
               value: 'AUTO_CURSEFORGE'
             - name: CF_API_KEY
               value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
-            - name: CF_PAGE_URL
-              value: 'https://www.curseforge.com/minecraft/modpacks/the-pixelmon-modpack/files/5355293'
+            - name:  CF_SLUG
+              value: 'the-pixelmon-modpack'
+            - name:  CF_FILE_ID
+              value: '5355293'
             - name: ALLOW_FLIGHT
               value: 'TRUE'
             - name: 'MEMORY'
