@@ -1,0 +1,67 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pixelmon
+    app.kubernetes.io/instance: pixelmon
+  name: pixelmon
+  namespace: pixelmon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pixelmon
+  template:
+    metadata:
+      labels:
+        app: pixelmon
+    spec:
+      nodeSelector:
+        worker: "true"
+      containers:
+        - env:
+            - name: EULA
+              value: 'TRUE'
+            - name: TYPE
+              value: 'FORGE'
+            - name: CF_API_KEY
+              value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
+            - name: CF_SLUG
+              value: 'pixelmon'
+            - name: CF_FILE_ID
+              value: '4248390'
+            - name: ALLOW_FLIGHT
+              value: 'TRUE'
+          image: itzg/minecraft-server
+          name: pixelmon-server
+          ports:
+            - containerPort: 25565
+          resources: {}
+          stdin: true
+          tty: true
+          volumeMounts:
+            - mountPath: /data
+              name: pixelmon
+      restartPolicy: Always
+      volumes:
+        - name: pixelmon
+          persistentVolumeClaim:
+            claimName: pixelmon
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: pixelmon
+  name: pixelmon
+  namespace: pixelmon
+spec:
+  ports:
+  - name: pixelmon-tcp
+    port: 25565
+    protocol: TCP
+    targetPort: 25565
+  selector:
+    app: pixelmon
+  type: ClusterIP
