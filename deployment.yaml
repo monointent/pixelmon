@@ -40,6 +40,10 @@ spec:
           ports:
             - containerPort: 25565
           resources: {}
+            limits:
+              memory: 12Gi
+            requests:
+              memory: 8Gi
           stdin: true
           tty: true
           volumeMounts:
