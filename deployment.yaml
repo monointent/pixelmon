@@ -32,7 +32,7 @@ spec:
             - name: CF_API_KEY
               value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
             - naem: CURSEFORGE_FILES
-              value: 'pixelmon'
+              value: '|pixelmon'
             #- name:  CF_SLUG
               #value: 'the-pixelmon-modpack'
             #- name:  CF_FILE_ID
