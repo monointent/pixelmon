@@ -32,7 +32,7 @@ spec:
             - name: CF_PAGE_URL
               value: 'https://www.curseforge.com/minecraft/mc-mods/pixelmon/files/5353673'
             - name: CF_FILE_ID
-              value: '4248390'
+              value: '5353673'
             - name: ALLOW_FLIGHT
               value: 'TRUE'
           image: itzg/minecraft-server
