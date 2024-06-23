@@ -48,12 +48,9 @@ spec:
               memory: 8Gi
           stdin: true
           tty: true
-          volumeMounts:
-            - name: data
-              mountPath: /data
-            - name: download
-              mountPath: /download
-              readOnly: true
+            volumeMounts:
+            - mountPath: /data
+              name: pixelmon
       restartPolicy: Always
       volumes:
         - name: pixelmon
