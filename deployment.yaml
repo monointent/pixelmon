@@ -25,14 +25,10 @@ spec:
               value: 'TRUE'
             - name: TYPE
               value: 'AUTO_CURSEFORGE'
-            - name: VERSION
-              value: '1.20.2'
             - name: CF_API_KEY
               value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
             - name: CF_PAGE_URL
               value: 'https://www.curseforge.com/minecraft/mc-mods/pixelmon/files/5353673'
-            - name: CF_FILE_ID
-              value: '5353673'
             - name: ALLOW_FLIGHT
               value: 'TRUE'
           image: itzg/minecraft-server
