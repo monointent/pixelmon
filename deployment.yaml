@@ -39,7 +39,7 @@ spec:
           name: pixelmon-server
           ports:
             - containerPort: 25565
-          resources: {}
+          resources:
             limits:
               memory: 12Gi
             requests:
