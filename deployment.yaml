@@ -45,8 +45,6 @@ spec:
           volumeMounts:
             - mountPath: /data
               name: pixelmon
-            - mountPath: /downloads
-              name: pixelmon
       restartPolicy: Always
       volumes:
         - name: pixelmon
