@@ -3,19 +3,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: Cobblemon
-    app.kubernetes.io/instance: Cobblemon
-  name: Cobblemon
-  namespace: Cobblemon
+    app: cobblemon
+    app.kubernetes.io/instance: cobblemon
+  name: cobblemon
+  namespace: cobblemon
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Cobblemon
+      app: cobblemon
   template:
     metadata:
       labels:
-        app: Cobblemon
+        app: cobblemon
     spec:
       nodeSelector:
         worker: "true"
@@ -32,13 +32,13 @@ spec:
             #- name:  CF_FILENAME_MATCHER
               #value: '9.1.11'
             #- name: CF_SERVER_MOD
-              #value: '/download/Cobblemon.zip'
+              #value: '/download/cobblemon.zip'
             - name: ALLOW_FLIGHT
               value: 'TRUE'
             - name: 'MEMORY'
               value: '12G'
           image: itzg/minecraft-server
-          name: Cobblemon-server
+          name: cobblemon-server
           ports:
             - containerPort: 25566
           resources:
@@ -50,27 +50,27 @@ spec:
           tty: true
           volumeMounts:
             - mountPath: /data
-              name: Cobblemon
+              name: cobblemon
       restartPolicy: Always
       volumes:
-        - name: Cobblemon
+        - name: cobblemon
           persistentVolumeClaim:
-            claimName: Cobblemon
+            claimName: cobblemon
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: Cobblemon
-  name: Cobblemon
-  namespace: Cobblemon
+    app: cobblemon
+  name: cobblemon
+  namespace: cobblemon
 spec:
   ports:
-  - name: Cobblemon-tcp
+  - name: cobblemon-tcp
     port: 25566
     protocol: TCP
     targetPort: 25566
   selector:
-    app: Cobblemon
+    app: cobblemon
   loadBalancerIP: 10.1.40.13
   type: LoadBalancer
