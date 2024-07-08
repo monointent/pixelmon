@@ -3,19 +3,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: pixelmon
-    app.kubernetes.io/instance: pixelmon
-  name: pixelmon
-  namespace: pixelmon
+    app: Cobblemon
+    app.kubernetes.io/instance: Cobblemon
+  name: Cobblemon
+  namespace: Cobblemon
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pixelmon
+      app: Cobblemon
   template:
     metadata:
       labels:
-        app: pixelmon
+        app: Cobblemon
     spec:
       nodeSelector:
         worker: "true"
@@ -28,19 +28,19 @@ spec:
             - name: CF_API_KEY
               value: '$$2a$$10$$glYS2Cf8Igq09KL2RmIta.D.2kUm5UBBKm3RlMqcmkFPj6jP/3EH6'
             - name:  CF_SLUG
-              value: 'the-pixelmon-modpack'
+              value: 'cobblemon-fabric'
             #- name:  CF_FILENAME_MATCHER
               #value: '9.1.11'
             #- name: CF_SERVER_MOD
-              #value: '/download/pixelmon.zip'
+              #value: '/download/Cobblemon.zip'
             - name: ALLOW_FLIGHT
               value: 'TRUE'
             - name: 'MEMORY'
               value: '12G'
           image: itzg/minecraft-server
-          name: pixelmon-server
+          name: Cobblemon-server
           ports:
-            - containerPort: 25565
+            - containerPort: 25566
           resources:
             limits:
               memory: 12Gi
@@ -50,27 +50,27 @@ spec:
           tty: true
           volumeMounts:
             - mountPath: /data
-              name: pixelmon
+              name: Cobblemon
       restartPolicy: Always
       volumes:
-        - name: pixelmon
+        - name: Cobblemon
           persistentVolumeClaim:
-            claimName: pixelmon
+            claimName: Cobblemon
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: pixelmon
-  name: pixelmon
-  namespace: pixelmon
+    app: Cobblemon
+  name: Cobblemon
+  namespace: Cobblemon
 spec:
   ports:
-  - name: pixelmon-tcp
-    port: 25565
+  - name: Cobblemon-tcp
+    port: 25566
     protocol: TCP
-    targetPort: 25565
+    targetPort: 25566
   selector:
-    app: pixelmon
+    app: Cobblemon
   loadBalancerIP: 10.1.40.13
   type: LoadBalancer
